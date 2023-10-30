@@ -14,6 +14,7 @@ interface LoginBody {
     password?: string,
 }
 
+//Get the current logged in user
 export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
     try {
         const user = await UserModel.findById(req.session.userId).select("+email").exec();
@@ -23,7 +24,7 @@ export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
     }
 };
 
-
+//Signup a new user (Setup with email,username and password.)
 export const signUp: RequestHandler<unknown, unknown, SignUpBody, unknown> = async (req, res, next) => {
     const username = req.body.username;
     const email = req.body.email;
@@ -31,7 +32,7 @@ export const signUp: RequestHandler<unknown, unknown, SignUpBody, unknown> = asy
 
     try {
         if (!username || !email || !passwordRaw) {
-            throw createHttpError(400, "Parameters missing");
+            throw createHttpError(400, "Parameters missing(Check credentials)");
         }
 
         const existingUsername = await UserModel.findOne({ username: username }).exec();
@@ -43,7 +44,7 @@ export const signUp: RequestHandler<unknown, unknown, SignUpBody, unknown> = asy
         const existingEmail = await UserModel.findOne({ email: email }).exec();
 
         if (existingEmail) {
-            throw createHttpError(409, "A user with this email address already exists. Please log in instead.");
+            throw createHttpError(409, "A user with this email address already exists. Please log in or enter different email address.");
         }
 
         const passwordHashed = await bcrypt.hash(passwordRaw, 10);
@@ -62,13 +63,14 @@ export const signUp: RequestHandler<unknown, unknown, SignUpBody, unknown> = asy
     }
 };
 
+//Login (setup with email and password,make changes in case of login through other credentials)
 export const login: RequestHandler<unknown, unknown, LoginBody, unknown> = async (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
 
     try {
         if (!email || !password) {
-            throw createHttpError(400, "Parameters missing");
+            throw createHttpError(400, "Parameters missing(check your credentials)");
         }
 
         const user = await UserModel.findOne({ email: email }).select("+password +username").exec();
@@ -90,6 +92,7 @@ export const login: RequestHandler<unknown, unknown, LoginBody, unknown> = async
     }
 };
 
+//Logout(destroy the session)
 export const logout: RequestHandler = (req, res, next) => {
     req.session.destroy(error => {
         if (error) {

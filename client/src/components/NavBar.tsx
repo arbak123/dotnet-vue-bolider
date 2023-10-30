@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 
+//Basic navbar setup with Dashboard and Auth routes
 const NavBar = () => {
     const { user } = useContext(UserContext)
     return (
