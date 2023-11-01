@@ -29,7 +29,21 @@ While building projects,redoing the same configs,installations,etc multiple time
 2. Create a .env file inside client folder and one inside backend folder.
     You will need this to store your secret keys.
 
-That's all you will need to get started with the mern-boilerplate !
+    #### Setting up proxy :
+
+     * In the client folder,open the *vite.config.ts*
+     * Below plugins,add the following code:
+
+            `server: {
+               proxy: {
+                '/api': {
+                    target:  "YOUR_BACKEND_LOCALHOST_ADDRESS_HERE",
+                    changeOrigin: true,
+                    secure: false,
+                },
+              },
+             },`
+     That's all you will need to get started with the mern-boilerplate !
 
 
 ### Setting up Project

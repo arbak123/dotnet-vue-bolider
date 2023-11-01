@@ -7,15 +7,21 @@ import Dashboard from './pages/Dashboard'
 import Auth from './pages/Auth'
 import HomePage from './pages/HomePage'
 import NavBar from './components/NavBar'
+import Layout from './Layout'
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
+      {/* <NavBar /> */}
+      <Routes >
+        <Route path='/' element={<Layout />}>
+          <Route index={true} element={<HomePage />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/register' element={<Auth />} />
+        </Route>
+        {/* <Route path='/' element={<HomePage />} />
         <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/register' element={<Auth />} />
+        <Route path='/register' element={<Auth />} /> */}
       </Routes>
 
     </>
