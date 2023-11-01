@@ -2,11 +2,11 @@
 
 Jumpstart Your MERN Stack Projects!
 
-Dive into MERN (MongoDB, Express.js, React, Node.js) stack development without tedious initial setup, configuration, and authentication hassles?
+Dive into MERN (MongoDB, Express.js, React, Node.js) stack development without tedious initial setup, configuration, and authentication hassles.
 
 ## Description
 
-While building projects,redoing the same configs,installations,etc multiple times felt tedious and I am sure many of other fellow developers also feel the same way.So I hope this boilerplate code help them to not worry about all that and instead focus on the amazing ideas that they are working to build straighaway.
+While building projects,redoing the same configs,installations,etc multiple times felt tedious and I am sure many of other fellow developers also feel the same way.So I hope this boilerplate code help them to not worry about all that and instead focus on the amazing ideas that they are working to build straightaway.
 #### What's Inside
 1) Out-of-the-Box Setup: Get up and running in minutes. Our boilerplate provides a preconfigured MERN environment, sparing you from the initial setup headaches.
 
