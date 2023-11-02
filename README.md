@@ -8,19 +8,19 @@ Dive into MERN (MongoDB, Express.js, React, Node.js) stack development without t
 
 While building projects,redoing the same configs,installations,etc multiple times felt tedious and I am sure many of other fellow developers also feel the same way.So I hope this boilerplate code help them to not worry about all that and instead focus on the amazing ideas that they are working to build straightaway.
 #### What's Inside
-1) Out-of-the-Box Setup: Get up and running in minutes. Our boilerplate provides a preconfigured MERN environment, sparing you from the initial setup headaches.
+1)  **Out-of-the-Box Setup** : Get up and running in minutes. Our boilerplate provides a preconfigured MERN environment, sparing you from the initial setup headaches.
 
-2) User Authentication: We've implemented user authentication, so you can focus on building your application's core features instead of worrying about user registration, login, and account management.
+2) **User Authentication** : We've implemented user authentication, so you can focus on building your application's core features instead of worrying about user registration, login, and account management.
 
-3) API Integration: The Express.js backend is pre-equipped with API endpoints and routing for seamless communication with your React frontend. Data management is a breeze.
+3) **API Integration** : The Express.js backend is pre-equipped with API endpoints and routing for seamless communication with your React frontend. Data management is a breeze.
 
-4) React Frontend: A robust, responsive, and customizable React frontend is included. Kickstart your project with a clean and well-structured user interface.
+4) **React Frontend** : A robust, responsive, and customizable React frontend using vite is included. Kickstart your project with a clean and well-structured user interface.
 
-5) Customization: Tailor the boilerplate to your project's specific needs with ease. Add additional libraries, components, or features as you see fit.
+5) **Customization** : Tailor the boilerplate to your project's specific needs with ease. Add additional libraries, components, or features as you see fit.
 
-6) Modular Architecture: Our boilerplate follows best practices, ensuring your project remains scalable, maintainable, and easy to work with as it grows.
+6) **Modular Architecture** : Our boilerplate follows best practices, ensuring your project remains scalable, maintainable, and easy to work with as it grows.
 
-7) Documentation: Comprehensive documentation is available to help you understand and make the most of the boilerplate's features.
+7) **Documentation** : Comprehensive documentation is available to help you understand and make the most of the boilerplate's features.
 
 ## Getting Started
 1. Clone this repository with the following command:
@@ -63,6 +63,21 @@ While building projects,redoing the same configs,installations,etc multiple time
            
        `npm start` 
   And That's it! You are project is now up and running and you can now start building your cool project.
+
+
+### Folder structure
+
+Congratulations you are done with the setup part ! But until you understand the folder structure of the project ,it would be difficult for you to start working on your project.Keeping that in mind,I am adding a brief description of some important folders,route files,etc so that you can easily navigate through the project and write clean code without getting lost.
+
+**Frontend**
+
+*src/pages* : Create a separate .tsx file for each of your pages and add them under this folder.Make sure to break down code into components in case the file is getting too lengthy.
+
+*src/components* : Create your components and add them here
+
+*src/context* : Folder to store Context API files. (By Default it has UserContext.tsx for user but you can always add your own context files here)
+
+*src/network* : Create file for all your api call functions under this folder. (By default it contains UserApi.ts for User authentication related API Calls. )
 
 
 ## Authors
